@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    # If your app needs to expose a port, uncomment the next line and specify the port
+    # ports:
+    #   - "8000:8000"

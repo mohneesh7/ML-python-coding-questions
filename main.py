@@ -1,6 +1,8 @@
 import os
 import pandas as pd
-import leetcodeFetcher as lcf
+import utils.leetcodeFetcher as lcf
+import utils.create_static_webpage as csw
+import utils.createDirsFiles as cdf
 
 
 def create_html_file(question_path, folder_path):
@@ -31,6 +33,8 @@ def parse_problem_repo(repo_path='ProblemRepo'):
             if not os.path.exists(question_html_path):
                 question_path = os.path.join(folder_path, 'question.txt')
                 question_path = create_html_file(question_path, folder_path)
+            else:
+                question_path = question_html_path
             solution_path = os.path.join(folder_path, 'solution.py')
             
             if os.path.exists(question_path) and os.path.exists(solution_path):
@@ -46,8 +50,15 @@ def parse_problem_repo(repo_path='ProblemRepo'):
     df = pd.DataFrame(problems)
     return df
 
-# Example usage:
-result_df = parse_problem_repo()
-print(result_df)
-result_df.to_csv('problems.csv', index=False)
+# Add this function before parse_problem_repo
+def create_problem_directories():
+    cdf.create_problem_directories()
+
+# Modify the main execution part
+if __name__ == "__main__":
+    create_problem_directories()
+    result_df = parse_problem_repo()
+    print(result_df)
+    result_df.to_csv('problems.csv', index=False)
+    csw.create_static_webpage(problems_csv='problems.csv')
 

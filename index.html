@@ -1,0 +1,527 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ML Python Coding Questions</title>
+        <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+            h1 { color: #333; text-align: center; }
+            .nav-tags {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+            .nav-tag {
+                background-color: #f0f0f0;
+                border: 1px solid #ddd;
+                border-radius: 20px;
+                padding: 5px 15px;
+                margin: 5px;
+                text-decoration: none;
+                color: #333;
+                transition: background-color 0.3s;
+            }
+            .nav-tag:hover {
+                background-color: #e0e0e0;
+            }
+            .problem { 
+                margin-bottom: 30px; 
+                padding: 20px; 
+                border-bottom: 2px solid #ddd;
+            }
+            .problem:nth-of-type(odd) { background-color: #f9f9f9; }
+            .problem:nth-of-type(even) { background-color: #ffffff; }
+            .problem h2 { 
+                color: #0066cc; 
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .problem-content {
+                display: flex;
+                justify-content: space-between;
+            }
+            .question, .solution { 
+                width: 48%; 
+                padding: 0 15px;
+            }
+            .vertical-divider {
+                width: 1px;
+                background-color: #ddd;
+                margin: 0 10px;
+            }
+            pre { background-color: #f4f4f4; padding: 10px; overflow-x: auto; }
+            @media (max-width: 768px) {
+                .problem-content {
+                    flex-direction: column;
+                }
+                .question, .solution { 
+                    width: 100%; 
+                    padding: 0;
+                }
+                .solution { 
+                    margin-top: 20px; 
+                }
+                .vertical-divider {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>ML Python Coding Questions</h1>
+        <div class="nav-tags">
+            <a href="#problem-0" class="nav-tag">Contains Duplicate</a>
+<a href="#problem-1" class="nav-tag">Find Closest Number to Zero</a>
+<a href="#problem-2" class="nav-tag">Is Subsequence</a>
+<a href="#problem-3" class="nav-tag">Jewels and Stones</a>
+<a href="#problem-4" class="nav-tag">Merge Strings Alternately</a>
+<a href="#problem-5" class="nav-tag">Reverse String</a>
+<a href="#problem-6" class="nav-tag">Roman to Integer</a>
+<a href="#problem-7" class="nav-tag">Squares of a Sorted Array</a>
+<a href="#problem-8" class="nav-tag">Two Sum II - Input Array Is Sorted</a>
+<a href="#problem-9" class="nav-tag">Valid Palindrome</a>
+
+        </div>
+        
+        <div id="problem-0" class="problem">
+            <h2>Contains Duplicate</h2>
+            <div class="problem-content">
+                <div class="question">
+                    <h3>Question:</h3>
+                    <html><body><p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears <strong>at least twice</strong> in the array, and return <code>false</code> if every element is distinct.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">nums = [1,2,3,1]</span></p>
+<p><strong>Output:</strong> <span class="example-io">true</span></p>
+<p><strong>Explanation:</strong></p>
+<p>The element 1 occurs at the indices 0 and 3.</p>
+</div>
+<p><strong class="example">Example 2:</strong></p>
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">nums = [1,2,3,4]</span></p>
+<p><strong>Output:</strong> <span class="example-io">false</span></p>
+<p><strong>Explanation:</strong></p>
+<p>All elements are distinct.</p>
+</div>
+<p><strong class="example">Example 3:</strong></p>
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">nums = [1,1,1,3,3,4,3,2,4,2]</span></p>
+<p><strong>Output:</strong> <span class="example-io">true</span></p>
+</div>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
+</body></html>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="solution">
+                    <h3>Solution:</h3>
+                    <script src="https://gist.github.com/mohneesh7/0876acfc2814a73e27620da09c1ebb2b.js"></script>
+                </div>
+            </div>
+        </div>
+        
+        <div id="problem-1" class="problem">
+            <h2>Find Closest Number to Zero</h2>
+            <div class="problem-content">
+                <div class="question">
+                    <h3>Question:</h3>
+                    <html><body><p>Given an integer array <code>nums</code> of size <code>n</code>, return <em>the number with the value <strong>closest</strong> to </em><code>0</code><em> in </em><code>nums</code>. If there are multiple answers, return <em>the number with the <strong>largest</strong> value</em>.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre>
+<strong>Input:</strong> nums = [-4,-2,1,4,8]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong>
+The distance from -4 to 0 is |-4| = 4.
+The distance from -2 to 0 is |-2| = 2.
+The distance from 1 to 0 is |1| = 1.
+The distance from 4 to 0 is |4| = 4.
+The distance from 8 to 0 is |8| = 8.
+Thus, the closest number to 0 in the array is 1.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre>
+<strong>Input:</strong> nums = [2,-1,1]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> 1 and -1 are both the closest numbers to 0, so 1 being larger is returned.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 1000</code></li>
+<li><code>-10<sup>5</sup> &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
+</ul>
+</body></html>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="solution">
+                    <h3>Solution:</h3>
+                    <script src="https://gist.github.com/mohneesh7/36cf99444d1d34e45e2e7907cfe1e22a.js"></script>
+                </div>
+            </div>
+        </div>
+        
+        <div id="problem-2" class="problem">
+            <h2>Is Subsequence</h2>
+            <div class="problem-content">
+                <div class="question">
+                    <h3>Question:</h3>
+                    <html><body><p>Given two strings <code>s</code> and <code>t</code>, return <code>true</code><em> if </em><code>s</code><em> is a <strong>subsequence</strong> of </em><code>t</code><em>, or </em><code>false</code><em> otherwise</em>.</p>
+<p>A <strong>subsequence</strong> of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., <code>"ace"</code> is a subsequence of <code>"<u>a</u>b<u>c</u>d<u>e</u>"</code> while <code>"aec"</code> is not).</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "abc", t = "ahbgdc"
+<strong>Output:</strong> true
+</pre><p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "axc", t = "ahbgdc"
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= s.length &lt;= 100</code></li>
+<li><code>0 &lt;= t.length &lt;= 10<sup>4</sup></code></li>
+<li><code>s</code> and <code>t</code> consist only of lowercase English letters.</li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Suppose there are lots of incoming <code>s</code>, say <code>s<sub>1</sub>, s<sub>2</sub>, ..., s<sub>k</sub></code> where <code>k &gt;= 10<sup>9</sup></code>, and you want to check one by one to see if <code>t</code> has its subsequence. In this scenario, how would you change your code?</body></html>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="solution">
+                    <h3>Solution:</h3>
+                    <script src="https://gist.github.com/mohneesh7/d71ecadfd28117b62597673c35b22d9b.js"></script>
+                </div>
+            </div>
+        </div>
+        
+        <div id="problem-3" class="problem">
+            <h2>Jewels and Stones</h2>
+            <div class="problem-content">
+                <div class="question">
+                    <h3>Question:</h3>
+                    <html><body><p>You're given strings <code>jewels</code> representing the types of stones that are jewels, and <code>stones</code> representing the stones you have. Each character in <code>stones</code> is a type of stone you have. You want to know how many of the stones you have are also jewels.</p>
+<p>Letters are case sensitive, so <code>"a"</code> is considered a different type of stone from <code>"A"</code>.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> jewels = "aA", stones = "aAAbbbb"
+<strong>Output:</strong> 3
+</pre><p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> jewels = "z", stones = "ZZ"
+<strong>Output:</strong> 0
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= jewels.length, stones.length &lt;= 50</code></li>
+<li><code>jewels</code> and <code>stones</code> consist of only English letters.</li>
+<li>All the characters of <code>jewels</code> are <strong>unique</strong>.</li>
+</ul>
+</body></html>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="solution">
+                    <h3>Solution:</h3>
+                    <script src="https://gist.github.com/mohneesh7/c65886d6f2d1fe55b70de533614af2b4.js"></script>
+                </div>
+            </div>
+        </div>
+        
+        <div id="problem-4" class="problem">
+            <h2>Merge Strings Alternately</h2>
+            <div class="problem-content">
+                <div class="question">
+                    <h3>Question:</h3>
+                    <html><body><p>You are given two strings <code>word1</code> and <code>word2</code>. Merge the strings by adding letters in alternating order, starting with <code>word1</code>. If a string is longer than the other, append the additional letters onto the end of the merged string.</p>
+<p>Return <em>the merged string.</em></p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre>
+
+<strong>Input:</strong> word1 = "abc", word2 = "pqr"
+
+<strong>Output:</strong> "apbqcr"
+
+<strong>Explanation:</strong> The merged string will be merged as so:
+
+word1:  a   b   c
+
+word2:    p   q   r
+
+merged: a p b q c r
+
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre>
+
+<strong>Input:</strong> word1 = "ab", word2 = "pqrs"
+
+<strong>Output:</strong> "apbqrs"
+
+<strong>Explanation:</strong> Notice that as word2 is longer, "rs" is appended to the end.
+
+word1:  a   b 
+
+word2:    p   q   r   s
+
+merged: a p b q   r   s
+
+</pre>
+<p><strong class="example">Example 3:</strong></p>
+<pre>
+
+<strong>Input:</strong> word1 = "abcd", word2 = "pq"
+
+<strong>Output:</strong> "apbqcd"
+
+<strong>Explanation:</strong> Notice that as word1 is longer, "cd" is appended to the end.
+
+word1:  a   b   c   d
+
+word2:    p   q 
+
+merged: a p b q c   d
+
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= word1.length, word2.length &lt;= 100</code></li>
+<li><code>word1</code> and <code>word2</code> consist of lowercase English letters.</li>
+</ul></body></html>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="solution">
+                    <h3>Solution:</h3>
+                    <script src="https://gist.github.com/mohneesh7/cbfc7c367b75b528b8666378cd2c67fe.js"></script>
+                </div>
+            </div>
+        </div>
+        
+        <div id="problem-5" class="problem">
+            <h2>Reverse String</h2>
+            <div class="problem-content">
+                <div class="question">
+                    <h3>Question:</h3>
+                    <html><body><p>Write a function that reverses a string. The input string is given as an array of characters <code>s</code>.</p>
+<p>You must do this by modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a> with <code>O(1)</code> extra memory.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> s = ["h","e","l","l","o"]
+<strong>Output:</strong> ["o","l","l","e","h"]
+</pre><p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> s = ["H","a","n","n","a","h"]
+<strong>Output:</strong> ["h","a","n","n","a","H"]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+<li><code>s[i]</code> is a <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters" target="_blank">printable ascii character</a>.</li>
+</ul>
+</body></html>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="solution">
+                    <h3>Solution:</h3>
+                    <script src="https://gist.github.com/mohneesh7/6a764595e14eee349069eec394adaba0.js"></script>
+                </div>
+            </div>
+        </div>
+        
+        <div id="problem-6" class="problem">
+            <h2>Roman to Integer</h2>
+            <div class="problem-content">
+                <div class="question">
+                    <h3>Question:</h3>
+                    <html><body><p>Roman numerals are represented by seven different symbols: <code>I</code>, <code>V</code>, <code>X</code>, <code>L</code>, <code>C</code>, <code>D</code> and <code>M</code>.</p>
+<pre>
+<strong>Symbol</strong>       <strong>Value</strong>
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000</pre>
+<p>For example, <code>2</code> is written as <code>II</code> in Roman numeral, just two ones added together. <code>12</code> is written as <code>XII</code>, which is simply <code>X + II</code>. The number <code>27</code> is written as <code>XXVII</code>, which is <code>XX + V + II</code>.</p>
+<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <code>IIII</code>. Instead, the number four is written as <code>IV</code>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <code>IX</code>. There are six instances where subtraction is used:</p>
+<ul>
+<li><code>I</code> can be placed before <code>V</code> (5) and <code>X</code> (10) to make 4 and 9. </li>
+<li><code>X</code> can be placed before <code>L</code> (50) and <code>C</code> (100) to make 40 and 90. </li>
+<li><code>C</code> can be placed before <code>D</code> (500) and <code>M</code> (1000) to make 400 and 900.</li>
+</ul>
+<p>Given a roman numeral, convert it to an integer.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre>
+<strong>Input:</strong> s = "III"
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> III = 3.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre>
+<strong>Input:</strong> s = "LVIII"
+<strong>Output:</strong> 58
+<strong>Explanation:</strong> L = 50, V= 5, III = 3.
+</pre>
+<p><strong class="example">Example 3:</strong></p>
+<pre>
+<strong>Input:</strong> s = "MCMXCIV"
+<strong>Output:</strong> 1994
+<strong>Explanation:</strong> M = 1000, CM = 900, XC = 90 and IV = 4.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 15</code></li>
+<li><code>s</code> contains only the characters <code>('I', 'V', 'X', 'L', 'C', 'D', 'M')</code>.</li>
+<li>It is <strong>guaranteed</strong> that <code>s</code> is a valid roman numeral in the range <code>[1, 3999]</code>.</li>
+</ul>
+</body></html>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="solution">
+                    <h3>Solution:</h3>
+                    <script src="https://gist.github.com/mohneesh7/53fad36c4b90a1256a90d6271641da0f.js"></script>
+                </div>
+            </div>
+        </div>
+        
+        <div id="problem-7" class="problem">
+            <h2>Squares of a Sorted Array</h2>
+            <div class="problem-content">
+                <div class="question">
+                    <h3>Question:</h3>
+                    <html><body><p>Given an integer array <code>nums</code> sorted in <strong>non-decreasing</strong> order, return <em>an array of <strong>the squares of each number</strong> sorted in non-decreasing order</em>.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre>
+<strong>Input:</strong> nums = [-4,-1,0,3,10]
+<strong>Output:</strong> [0,1,9,16,100]
+<strong>Explanation:</strong> After squaring, the array becomes [16,1,0,9,100].
+After sorting, it becomes [0,1,9,16,100].
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre>
+<strong>Input:</strong> nums = [-7,-3,2,3,11]
+<strong>Output:</strong> [4,9,9,49,121]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code><span>1 &lt;= nums.length &lt;= </span>10<sup>4</sup></code></li>
+<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
+<li><code>nums</code> is sorted in <strong>non-decreasing</strong> order.</li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Squaring each element and sorting the new array is very trivial, could you find an <code>O(n)</code> solution using a different approach?</body></html>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="solution">
+                    <h3>Solution:</h3>
+                    <script src="https://gist.github.com/mohneesh7/58c73775bf2c320da1e3e61222d57b2d.js"></script>
+                </div>
+            </div>
+        </div>
+        
+        <div id="problem-8" class="problem">
+            <h2>Two Sum II - Input Array Is Sorted</h2>
+            <div class="problem-content">
+                <div class="question">
+                    <h3>Question:</h3>
+                    <html><body><p>Given a <strong>1-indexed</strong> array of integers <code>numbers</code> that is already <strong><em>sorted in non-decreasing order</em></strong>, find two numbers such that they add up to a specific <code>target</code> number. Let these two numbers be <code>numbers[index<sub>1</sub>]</code> and <code>numbers[index<sub>2</sub>]</code> where <code>1 &lt;= index<sub>1</sub> &lt; index<sub>2</sub> &lt;= numbers.length</code>.</p>
+<p>Return<em> the indices of the two numbers, </em><code>index<sub>1</sub></code><em> and </em><code>index<sub>2</sub></code><em>, <strong>added by one</strong> as an integer array </em><code>[index<sub>1</sub>, index<sub>2</sub>]</code><em> of length 2.</em></p>
+<p>The tests are generated such that there is <strong>exactly one solution</strong>. You <strong>may not</strong> use the same element twice.</p>
+<p>Your solution must use only constant extra space.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre>
+<strong>Input:</strong> numbers = [<u>2</u>,<u>7</u>,11,15], target = 9
+<strong>Output:</strong> [1,2]
+<strong>Explanation:</strong> The sum of 2 and 7 is 9. Therefore, index<sub>1</sub> = 1, index<sub>2</sub> = 2. We return [1, 2].
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre>
+<strong>Input:</strong> numbers = [<u>2</u>,3,<u>4</u>], target = 6
+<strong>Output:</strong> [1,3]
+<strong>Explanation:</strong> The sum of 2 and 4 is 6. Therefore index<sub>1</sub> = 1, index<sub>2</sub> = 3. We return [1, 3].
+</pre>
+<p><strong class="example">Example 3:</strong></p>
+<pre>
+<strong>Input:</strong> numbers = [<u>-1</u>,<u>0</u>], target = -1
+<strong>Output:</strong> [1,2]
+<strong>Explanation:</strong> The sum of -1 and 0 is -1. Therefore index<sub>1</sub> = 1, index<sub>2</sub> = 2. We return [1, 2].
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= numbers.length &lt;= 3 * 10<sup>4</sup></code></li>
+<li><code>-1000 &lt;= numbers[i] &lt;= 1000</code></li>
+<li><code>numbers</code> is sorted in <strong>non-decreasing order</strong>.</li>
+<li><code>-1000 &lt;= target &lt;= 1000</code></li>
+<li>The tests are generated such that there is <strong>exactly one solution</strong>.</li>
+</ul>
+</body></html>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="solution">
+                    <h3>Solution:</h3>
+                    <script src="https://gist.github.com/mohneesh7/c0658863ba92961670dbbfc235d648a6.js"></script>
+                </div>
+            </div>
+        </div>
+        
+        <div id="problem-9" class="problem">
+            <h2>Valid Palindrome</h2>
+            <div class="problem-content">
+                <div class="question">
+                    <h3>Question:</h3>
+                    <html><body><p>A phrase is a <strong>palindrome</strong> if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.</p>
+<p>Given a string <code>s</code>, return <code>true</code><em> if it is a <strong>palindrome</strong>, or </em><code>false</code><em> otherwise</em>.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre>
+<strong>Input:</strong> s = "A man, a plan, a canal: Panama"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> "amanaplanacanalpanama" is a palindrome.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre>
+<strong>Input:</strong> s = "race a car"
+<strong>Output:</strong> false
+<strong>Explanation:</strong> "raceacar" is not a palindrome.
+</pre>
+<p><strong class="example">Example 3:</strong></p>
+<pre>
+<strong>Input:</strong> s = " "
+<strong>Output:</strong> true
+<strong>Explanation:</strong> s is an empty string "" after removing non-alphanumeric characters.
+Since an empty string reads the same forward and backward, it is a palindrome.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 2 * 10<sup>5</sup></code></li>
+<li><code>s</code> consists only of printable ASCII characters.</li>
+</ul>
+</body></html>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="solution">
+                    <h3>Solution:</h3>
+                    <script src="https://gist.github.com/mohneesh7/da76d851ef0edc477bf06a24307651e8.js"></script>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+    </html>
+    
